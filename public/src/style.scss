@@ -18,3 +18,32 @@ a {
     text-decoration: none;
     color: var(--link-primary);
 }
+
+/*
+Utils
+*/
+
+.py-150 {
+    padding: 150px;
+}
+
+/*
+Produtcs    
+*/
+
+.product-img {
+    height: 250px;
+    width: 250px;
+}
+
+/*
+About
+*/
+
+.bg-parallax {
+    background: url('../img/book3.jpg') fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
