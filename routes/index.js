@@ -1,3 +1,5 @@
+var conn = require('./../inc/db');
+var contacts = require('./../inc/contact');
 var express = require('express');
 var router = express.Router();
 
@@ -18,17 +20,17 @@ router.get('/about', function(req, res, next) {
 
 /* GET contact page. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'E-books | Contact', h1 : 'Contact' });
+  contacts.render(req, res);
 });
 
 /** POST contact form */
 router.post('/contact', function(req, res, next) {
   if(!req.body.name) {
-    res.render(req, res, 'Digite um nome');
+    contacts.render(req, res, "Digite um nome");
   } else if(!req.body.email) {
-    res.render(req, res, 'Digite um email');
+    contacts.render(req, res, "Digite um email");
   }  else if(!req.body.message) {
-    res.render(req, res, 'Envie uma mensagem');
+    contacts.render(req, res, "Escreva uma mensagem");
   } else {
     res.json(req.body);
   }
