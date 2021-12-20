@@ -4,15 +4,15 @@
     <form action="/contact" method="post">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" value="<%= body.name%>">
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" value="<%= body.name%>" required>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" name="email" value="<%= body.email%>">
+            <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" name="email" value="<%= body.email%>" required>
         </div>
         <div class="mb-3">
             <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="textarea" rows="3"  name="message" value="<%= body.message%>"></textarea>
+            <textarea class="form-control" id="textarea" rows="3"  name="message" value="<%= body.message%>" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send</button>
     </form>
