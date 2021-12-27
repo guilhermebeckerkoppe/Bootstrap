@@ -32,7 +32,17 @@ router.post('/contact', function(req, res, next) {
   }  else if(!req.body.message) {
     contacts.render(req, res, "Escreva uma mensagem");
   } else {
-    res.json(req.body);
+    contacts.save(req.body).then(results => {
+
+      req.body= {};
+
+      contacts.render(req, res, null, "Menssagem enviada com sucesso");
+
+    }).catch(err => {
+
+      contacts.render(req, res, err.message, null);
+
+    });
   }
 });
 
