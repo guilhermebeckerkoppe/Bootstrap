@@ -1,4 +1,5 @@
 var express = require('express');
+var contacts = require('./../inc/admin');
 var router = express.Router();
 
 /* GET users listing. */
@@ -8,7 +9,12 @@ router.get('/', function(req, res, next) {
 
 /* GET users listing. */
 router.get('/contacts', function(req, res, next) {
-  res.render('admin/contacts', { title: 'E-books | Contacts', h1 : 'Contacts' });
+  contacts.listContacts().then(results => {
+    res.render('admin/contacts', { title: 'E-books | Contacts', h1 : 'Contacts', contacts : results });
+  }).catch(err => {
+    console.error(err);
+  });
+  //
 });
 
 module.exports = router;

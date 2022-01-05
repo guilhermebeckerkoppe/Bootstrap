@@ -1,4 +1,3 @@
-var conn = require('./../inc/db');
 var contacts = require('./../inc/contact');
 var express = require('express');
 var router = express.Router();
