@@ -17,4 +17,9 @@ router.get('/contacts', function(req, res, next) {
   //
 });
 
+/* GET users listing. */
+router.get('/addcontact', function(req, res, next) {
+  res.render('admin/addcontact', { title: 'E-books | Add/Edit contacts', h1 : 'Add/edit Contact' });
+});
+
 module.exports = router;
